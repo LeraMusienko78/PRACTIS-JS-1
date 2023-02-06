@@ -34,24 +34,31 @@ const question = confirm (`${playerName} , ты любишь математик�
 if (question === true){
     alert("Ok!")
 
-    const sum = prompt ("Итак , разминка. Сколько будет 2 + 2 ?");
+    let sum = prompt ("Итак , разминка. Сколько будет 2 + 2 ?");
 
 
-    if (sum === "4"){
-        alert (" Какой молодец, правильно!")
+    if (sum === "4" || sum === 4){
+        alert (" Какой молодец, правильно!");
     }
-    else{
-        alert(" Подумай еще!")
-    }
+    else if  (sum  !== 4 || sum != isNaN(sum)){
+        let newSum = prompt ("Попробуй еще  " , " 2 + 2  " )
 
-    const ded = prompt ("Второй вопрос! 100-24?");
+        if (newSum !==4 || newSum !=="4"){
 
-    if (ded ==="76"){
-        alert ("Super")
+            while( newSum === false || newSum === null || newSum === isNaN(newSum)){
+                newSum = prompt("Опять неправильно" , " 2+2 ?")
+            }
+
+            if (newSum === 4 || newSum === "4"){
+                alert (" good shit!");
+            }
+        }
+        
+    }else{
+        alert("error");
     }
-    else{
-        alert(" Подумай еще!")
-    }
+   
+
 
 } 
 else{
